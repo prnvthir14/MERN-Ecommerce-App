@@ -8,15 +8,16 @@ import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 
 //components
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar";import BackDrop from "./components/BackDrop";
 
 function App() {
   return (
     <Router>
       {/* planning components */}
       <NavBar />
+      <BackDrop/>
       {/* SideDrawer */}
-      {/* Backdrop */}
+
       <main>
         <Switch>
           <Route exact path="/" component={HomeScreen} />
