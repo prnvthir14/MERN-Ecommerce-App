@@ -1,0 +1,51 @@
+.navbar {
+  width: 100%;
+  background-color: green;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  z-index: 50;
+}
+
+.navbar__logo h2 {
+  color: burlywood;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.navbar__links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+/* using css selector to targe all li's */
+
+.navbar__links > li {
+  padding-left: 1.5rem;
+}
+
+.navbar__links > li > a {
+  text-decoration: none;
+  color: burlywood;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__links > li > a span {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.cart__link {
+
+  background: grey;
+  padding: 10px;
+  border-radius:8px ;
+
+
+
+}
