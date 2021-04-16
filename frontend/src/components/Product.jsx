@@ -18,7 +18,7 @@ const Product = () => {
           pulvinar mattis augue, vel egestas ipsum efficitur id.
         </p>
         <p className="info__price">$499.99</p>
-        <Link to={`/product${1111}`} className="info__button">
+        <Link to={`/product/${1111}`} className="info__button">
           {" "}
           VIEW ITEM
         </Link>

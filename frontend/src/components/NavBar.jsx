@@ -7,9 +7,9 @@ import logo from "../images/uru_logo.jpg";
 const NavBar = ({ click }) => {
   return (
     <nav className="navbar">
-      <div className="navbar__logo">
+      <Link to="/" className="navbar__logo">
         <img src={logo} alt="Logo" />
-      </div>
+      </Link>
 
       <ul className="navbar__links">
         <li>
