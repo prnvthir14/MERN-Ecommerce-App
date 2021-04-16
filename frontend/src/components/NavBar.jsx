@@ -2,17 +2,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import logo from "../images/uru_logo.jpg";
 
-const NavBar = () => {
+const NavBar = ({ click }) => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <h2>URU LIVING</h2>
+        <img src={logo} alt="Logo" />
       </div>
 
       <ul className="navbar__links">
         <li>
-          <Link to="/cart" className="cart__link" >
+          <Link to="/cart" className="cart__link">
             <i className="fas fa-shopping-cart"></i>
             <span>
               Cart
@@ -26,7 +27,7 @@ const NavBar = () => {
         </li>
       </ul>
 
-      <div className="hamburger__menu">
+      <div className="hamburger__menu" onClick={click}>
         <div></div>
         <div></div>
         <div></div>
