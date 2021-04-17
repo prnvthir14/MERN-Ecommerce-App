@@ -15,7 +15,7 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
     // ADD_TO_CART
     // REMOVE_TO_CART
     // CART_RESET
-    //case1:
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////#1
     case actionTypes.ADD_TO_CART:
       //action of adding item to cart;
       console.log("cartREDUCER.js action.payload", action.payload);
@@ -52,6 +52,18 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
           cartItems:[...state.cartItems, item]
         }
       }
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////#2  
+    case action.REMOVE_TO_CART:
+      //loosk like we can send back specific things in the payload depending on each action
+      //in this case, payload will contain just the id of the product to be removed
+      return {
+        ...state, 
+        cartItems: state.cartItems.filter((x)=> x.product !== action.payload)
+      }
+
+      
+    
 
       //default case for if there is no change to cartItems/action is not recognised
     default:
