@@ -11,7 +11,7 @@ const CartItem = ({ show, click }) => {
           alt="product name"
         />
       </div>
-      <Link className="classitem__name" to={`/product/${111}`}>
+      <Link className="cartitem__name" to={`/product/${111}`}>
         <p>product1</p>
       </Link>
       <p className="cartitem__price">$4999.99</p>
