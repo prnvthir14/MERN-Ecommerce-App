@@ -4,7 +4,13 @@ import thunk from "redux-thunk";
 
 import { composeWithDevTools } from "redux-devtools-extension";
 
-const reducer = combineReducers({});
+//Reducers
+import {cartReducer} from './reducers/cartReducers' 
+
+
+const reducer = combineReducers({
+  cart: cartReducer
+});
 
 //thunk - make asynch requests with redux
 const middleware = [thunk];
