@@ -26,7 +26,7 @@ export const getProductsReducer = (state = { products: [] }, action) => {
 };
 
 //see individual product details; when some clicks the link to see the individual product
-export const getProdctDetails = (state = { product: {} }, action) => {
+export const getProdctDetailsReducer = (state = { product: {} }, action) => {
   switch (action.type) {
     case actionTypes.GET_PRODUCT_DETAILS_REQUESTS:
       return {

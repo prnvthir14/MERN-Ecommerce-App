@@ -5,11 +5,16 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 //Reducers
-import {cartReducer} from './reducers/cartReducers' 
-
+import { cartReducer } from "./reducers/cartReducers";
+import {
+  getProductsReducer,
+  getProdctDetailsReducer,
+} from "./reducers/productReducers";
 
 const reducer = combineReducers({
-  cart: cartReducer
+  cart: cartReducer,
+  getProducts: getProductsReducer,
+  getProductDetail: getProdctDetailsReducer,
 });
 
 //thunk - make asynch requests with redux
