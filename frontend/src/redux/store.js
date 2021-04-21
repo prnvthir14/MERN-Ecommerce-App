@@ -8,13 +8,13 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { cartReducer } from "./reducers/cartReducers";
 import {
   getProductsReducer,
-  getProdctDetailsReducer,
+  getProductDetailsReducer,
 } from "./reducers/productReducers";
 
 const reducer = combineReducers({
   cart: cartReducer,
   getProducts: getProductsReducer,
-  getProductDetail: getProdctDetailsReducer,
+  getProductDetails: getProductDetailsReducer
 });
 
 //thunk - make asynch requests with redux
