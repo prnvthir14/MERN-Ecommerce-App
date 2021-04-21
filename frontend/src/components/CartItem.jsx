@@ -29,7 +29,6 @@ const CartItem = ({ item, qtyChangeHandler, emptyFromCartHandler }) => {
       <button
         className="cartitem__deteleBtn"
         onClick={() => {
-          console.log('jh', item.product, 'product idd' )
           emptyFromCartHandler(item.product);
         }}
       >

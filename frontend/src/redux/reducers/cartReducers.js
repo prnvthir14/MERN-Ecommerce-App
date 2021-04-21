@@ -67,8 +67,7 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
     case actionTypes.REMOVE_FROM_CART:
       //loosk like we can send back specific things in the payload depending on each action
       //in this case, payload will contain just the id of the product to be removed
-      console.log('REMOVE_FROM_CART')
-      console.log("REMOVE_FROM_CART.js action.payload", action.payload);
+
       return {
         ...state,
         cartItems: state.cartItems.filter((x) => x.product !== action.payload),
