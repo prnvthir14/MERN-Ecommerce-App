@@ -2,14 +2,14 @@ import * as actionTypes from "../constants/productConstants";
 import axios from "axios";
 
 export const getProducts = () => async (dispatch) => {
-  console.log("try dispatch productAction121231231231231231123s");
   try {
     dispatch({
       type: actionTypes.GET_PRODUCTS_REQUESTS,
     });
 
-    const { data } = await axios.get("/api/products").catch((err)=>{console.log('err -getProducts ',err)});
-
+    const { data } = await axios.get("/api/products").catch((err) => {
+      console.log("err -getProducts ", err);
+    });
 
     dispatch({
       type: actionTypes.GET_PRODUCTS_SUCCESS,
@@ -27,17 +27,14 @@ export const getProducts = () => async (dispatch) => {
 };
 
 export const getProductDetails = (id) => async (dispatch) => {
-  console.log("try dispatch productActions");
   try {
-    console.log("try dispatch productActions");
     dispatch({
       type: actionTypes.GET_PRODUCT_DETAILS_REQUEST,
     });
 
-    console.log("try dispatch productActions - a");
-    
-    const { data } = await axios.get(`/api/products/${id}`).catch((err)=>{console.log('err -getProductDetails ',err)});
-
+    const { data } = await axios.get(`/api/products/${id}`).catch((err) => {
+      console.log("err -getProductDetails ", err);
+    });
 
     dispatch({
       type: actionTypes.GET_PRODUCT_DETAILS_SUCCESS,
