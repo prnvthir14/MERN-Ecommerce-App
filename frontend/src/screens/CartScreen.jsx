@@ -19,11 +19,16 @@ const CartScreen = () => {
     dispatch(removeFromCart(x));
   };
 
+  //in both of these reduce functions, we do the followin:
+  //for each element (item) in the cartItems array do the following
+  //getCartCount - current cart quantity (item.qty) + existing previous qty
   const getCartCount = () => {
+    return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+  };
 
-    return cartItems.reduce((qty,item)=>(Number(item.qty) + qty),0)
-
-  }
+  const getCartSubTotal = () => {
+    return cartItems.reduce((price, item) => (item.price * item.qty)  + price, 0);
+  };
 
   const { cartItems } = cart;
 
@@ -50,7 +55,7 @@ const CartScreen = () => {
       <div className="cartscreen__right">
         <div className="cartscreen__info">
           <p>Subtotal ({getCartCount()}) items</p>
-          <p>499.99</p>
+          <p>${getCartSubTotal()}</p>
         </div>
         <div>
           <button>Proceed to Checkout</button>
