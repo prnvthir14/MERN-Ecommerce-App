@@ -49,7 +49,7 @@ const ProductScreen = ({ match, history }) => {
               <p>
                 Status:{" "}
                 <span>
-                  {product.countInStock > 0 ? "In STOCK" : "NOT IN STOCK"}
+                  {product.countInStock > 0 ? "In STOCK" : "SORRY, NOT IN STOCK"}
                 </span>
               </p>
               <p>
