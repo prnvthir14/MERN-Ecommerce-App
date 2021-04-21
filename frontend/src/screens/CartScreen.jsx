@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 import "./CartScreen.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import {addToCart} from '../redux/actions/cartActions'
+import { addToCart, removeFromCart } from "../redux/actions/cartActions";
 
 //components
 import CartItem from "../components/CartItem";
@@ -12,10 +12,12 @@ const CartScreen = () => {
   const cart = useSelector((state) => state.cart);
 
   const qtyChangeHandler = (id, qty) => {
+    dispatch(addToCart(id, qty));
+  };
 
-    dispatch(addToCart(id,qty))
-
-  }
+  const emptyFromCartHandler = (x) => {
+    dispatch(removeFromCart(x));
+  };
 
   const { cartItems } = cart;
 
@@ -29,9 +31,14 @@ const CartScreen = () => {
             <Link to="/">GO BACK TO SHOP</Link>
           </div>
         ) : (
-          cartItems.map((item) => 
-            <CartItem item={item} qtyChangeHandler={qtyChangeHandler} />
-          )
+          cartItems.map((item) => (
+            <CartItem
+              key={item.product}
+              item={item}
+              qtyChangeHandler={qtyChangeHandler}
+              emptyFromCartHandler={emptyFromCartHandler}
+            />
+          ))
         )}
       </div>
       <div className="cartscreen__right">

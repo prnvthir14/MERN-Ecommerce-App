@@ -23,12 +23,13 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
 };
 
 export const removeFromCart = (id) => (dispatch, getState) => {
+  console.log('hi, in removeFromCart action before dispatch ')
   //dispatch this info to initiate this action type----
   dispatch({
     type: actionTypes.REMOVE_FROM_CART,
     payload: id,
   });
-
+  console.log('hi, in removeFromCart action after dispatch ')
   //update localStorage with current cart state
   localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
 };

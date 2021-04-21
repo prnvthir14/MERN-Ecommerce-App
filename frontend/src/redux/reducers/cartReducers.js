@@ -26,7 +26,7 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////#1
     case actionTypes.ADD_TO_CART:
       //action of adding item to cart;
-      console.log("cartREDUCER.js action.payload", action.payload);
+
       //get item from payload
       const item = action.payload;
 
@@ -43,7 +43,7 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
           return false;
         }
       });
-      console.log(existItem, "should be all items in current cart");
+
       if (existItem) {
         return {
           //spread current state
@@ -64,9 +64,11 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
       }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////#2
-    case action.REMOVE_FROM_CART:
+    case actionTypes.REMOVE_FROM_CART:
       //loosk like we can send back specific things in the payload depending on each action
       //in this case, payload will contain just the id of the product to be removed
+      console.log('REMOVE_FROM_CART')
+      console.log("REMOVE_FROM_CART.js action.payload", action.payload);
       return {
         ...state,
         cartItems: state.cartItems.filter((x) => x.product !== action.payload),
